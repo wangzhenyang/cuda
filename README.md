@@ -1,5 +1,12 @@
 # Ubuntu 16.04 [![build status](https://gitlab.com/nvidia/cuda/badges/ubuntu16.04/build.svg)](https://gitlab.com/nvidia/cuda/commits/ubuntu16.04)
 
+## CUDA 10.1 (requires nvidia-docker v2)
+- [`10.1-base-ubuntu16.04` (*10.1/base/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.1/base/Dockerfile)
+- [`10.1-runtime-ubuntu16.04` (*10.1/runtime/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.1/runtime/Dockerfile)
+- [`10.1-devel-ubuntu16.04` (*10.1/devel/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.1/devel/Dockerfile)
+- [`10.1-cudnn7-runtime-ubuntu16.04` (*10.1/runtime/cudnn7/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.1/runtime/cudnn7/Dockerfile)
+- [`10.1-cudnn7-devel-ubuntu16.04` (*10.1/devel/cudnn7/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.1/devel/cudnn7/Dockerfile)
+
 ## CUDA 10.0 (requires nvidia-docker v2)
 - [`10.0-base-ubuntu16.04` (*10.0/base/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.0/base/Dockerfile)
 - [`10.0-runtime-ubuntu16.04` (*10.0/runtime/Dockerfile*)](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/10.0/runtime/Dockerfile)
