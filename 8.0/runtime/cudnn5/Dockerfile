@@ -1,5 +1,5 @@
-ARG repository
-FROM ${repository}:8.0-runtime-centos6
+ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:8.0-runtime-centos6
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
 ENV CUDNN_VERSION 5.1.10
