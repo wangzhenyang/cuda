@@ -1,5 +1,5 @@
-ARG repository
-FROM ${repository}:8.0-runtime-ubuntu14.04
+ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:8.0-runtime-ubuntu14.04
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
 RUN echo "deb https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64 /" > /etc/apt/sources.list.d/nvidia-ml.list
