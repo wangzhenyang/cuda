@@ -1,5 +1,5 @@
-ARG repository
-FROM ${repository}:10.1-base-centos7
+ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:10.1-base-centos7
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
 RUN yum install -y \

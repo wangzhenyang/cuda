@@ -1,5 +1,5 @@
-ARG repository
-FROM ${repository}:9.1-devel-centos7
+ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:9.1-devel-centos7
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
 ENV CUDNN_VERSION 7.1.2.21
