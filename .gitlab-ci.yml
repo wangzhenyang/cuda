@@ -10,7 +10,7 @@ variables:
 
 before_script:
   - apk add --no-cache git bash findutils
-  - if [[ -n $NV_CI_INTERNAL ]]; then
+  - if [[ ! -z $NV_CI_INTERNAL ]]; then
       export REGISTRY="gitlab-master.nvidia.com:5005";
       export REGISTRY_USER="gitlab-ci-token";
       export REGISTRY_TOKEN="${CI_JOB_TOKEN}";
@@ -128,153 +128,109 @@ stages:
     - docker images | grep ${IMAGE_NAME} | grep "${CUDA_VERSION:1}" | grep "\(${OS}\ \|-base\ \|-devel\ \|-runtime\ \)" | awk '{ print $1":"$2 }' | xargs -L1 docker push
 
 v8.0:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cuda_definition
 
 v8.0-cudnn5:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cudnn_definition
 
 v8.0-cudnn6:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cudnn_definition
 
 v8.0-cudnn7:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cudnn_definition
 
 # FIXME: need a runner with cuda 8.0
 .v8.0-test:
-  tags:
-    - cuda-docker
   <<: *test_definition
 
 v8.0-deploy:
-  tags:
-    - cuda-docker
   <<: *deploy_definition
 
 v9.0:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cuda_base_definition
 
 v9.0-cudnn7:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cudnn_definition
 
 # FIXME: need a runner with cuda 8.0
 .v9.0-test:
-  tags:
-    - cuda-docker
   <<: *test_definition
 
 v9.0-deploy:
-  tags:
-    - cuda-docker
   <<: *deploy_definition
 
 v9.1:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cuda_base_definition
 
 v9.1-cudnn7:
-  tags:
-    - cuda-docker
   variables:
     NO_OS_SUFFIX: "true"
   <<: *cudnn_definition
 
 # FIXME: need a runner with cuda 8.0
 .v9.1-test:
-  tags:
-    - cuda-docker
   <<: *test_definition
 
 v9.1-deploy:
-  tags:
-    - cuda-docker
   <<: *deploy_definition
 
 # NO_OS_SUFFIX is not defined here because these are set in the Ubuntu 18.04 release
 v9.2:
-  tags:
-    - cuda-docker
   <<: *cuda_base_definition
 
 v9.2-cudnn7:
-  tags:
-    - cuda-docker
   <<: *cudnn_definition
 
 # FIXME: need a runner with cuda 8.0
 .v9.2-test:
-  tags:
-    - cuda-docker
   <<: *test_definition
 
 v9.2-deploy:
-  tags:
-    - cuda-docker
   <<: *deploy_definition
 
 v10.0:
-  tags:
-    - cuda-docker
   <<: *cuda_base_definition
 
 v10.0-cudnn7:
-  tags:
-    - cuda-docker
   <<: *cudnn_definition
 
 # FIXME: need a runner with cuda 8.0
 .v10.0-test:
-  tags:
-    - cuda-docker
   <<: *test_definition
 
 v10.0-deploy:
-  tags:
-    - cuda-docker
   <<: *deploy_definition
 
 v10.1:
-  tags:
-    - cuda-docker-10.1
+  # tags:
+    # - cuda-docker-10.1
   <<: *cuda_base_definition
 
 v10.1-cudnn7:
-  tags:
-    - cuda-docker-10.1
+  # tags:
+    # - cuda-docker-10.1
   <<: *cudnn_definition
 
 v10.1-test:
-  tags:
-    - cuda-docker-10.1
+  # tags:
+    # - cuda-docker-10.1
   <<: *test_definition
 
 v10.1-deploy:
-  tags:
-    - cuda-docker-10.1
+  # tags:
+    # - cuda-docker-10.1
   <<: *deploy_definition
