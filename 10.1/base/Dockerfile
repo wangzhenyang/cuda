@@ -13,7 +13,7 @@ ENV CUDA_PKG_VERSION 10-1-$CUDA_VERSION-1
 # For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
 RUN yum install -y \
         cuda-cudart-$CUDA_PKG_VERSION \
-        cuda-compat-10-1-410.48 && \
+        cuda-compat-10-1 && \
     ln -s cuda-10.1 /usr/local/cuda && \
     rm -rf /var/cache/yum/*
 
